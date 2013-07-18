@@ -1,5 +1,5 @@
 Depot::Application.routes.draw do
-  get 'admin' => 'admin#index'
+    get 'admin' => 'admin#index'
 
   controller :sessions do
     get 'login' => :new
@@ -75,7 +75,16 @@ Depot::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'store#index', as: "store"
+  scope '(:locale)' do
+    resources :users
+    resources :orders
+    resources :line_items
+    resources :carts
+    resources :products do
+      get :who_bought, on: :member
+    end           
+    root to: 'store#index', as: "store"
+  end
 
   # See how all your routes lay out with "rake routes"
 
