@@ -1,4 +1,4 @@
-By 13-Web-109
+[By 13-Web-109]
 =============
 
 Team Member:
@@ -8,7 +8,7 @@ Shangxi Ji
 Xiongwei
 Shangjun Wu
 
-[[Using]]
+[Using]
 创建数据库：
 rake db:schema:load
 
@@ -19,6 +19,6 @@ rake db:seed  #书和一个用户 name:bluekey  passwd:12345678
 rails runner load_orders.rb
 
 
-[[Error Solution]]
+[Error Solution]
 Error: bcrypt-ruby is not part of the bundle. Add it to Gemfile.
 Solution: Remove Gemfile.lock and then run command "bundle install"   
