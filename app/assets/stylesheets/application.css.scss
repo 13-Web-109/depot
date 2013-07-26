@@ -121,3 +121,14 @@
   float: right;
   margin: -0.25em 0.1em;
 }
+
+a.button {
+  padding: 5px;
+  background: white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+a.button:hover {
+  background: rgb(211, 199, 199);
+}
