@@ -44,4 +44,6 @@ Product.create(title: 'Rails Test Prescriptions',
   image_url: 'rtp.jpg',
   price: 34.95)
 
-User.create(name: "bluekey", password: "12345678")
+
+User.create(name: 'bluekey', password: '12345678', password_confirmation: '12345678')
+
