@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+
   def index
     @products = Product.all
-
+    @categories = Category.all
+    @subcategories = Subcategory.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -14,7 +16,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
+    @categories = Category.all 
+    @subcategories = Subcategory.all 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -25,7 +28,8 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-
+    @categories = Category.all
+    @subcategories = Subcategory.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -35,13 +39,16 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @categories = Category.all
+    @subcategories = Subcategory.all
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
+    @categories = Category.all
+    @subcategories = Subcategory.all
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -57,7 +64,8 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-
+    @categories = Category.all
+    @subcategories = Subcategory.all
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -74,7 +82,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-
+    @categories = Category.all
     respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content }
@@ -83,6 +91,7 @@ class ProductsController < ApplicationController
 
   def who_bought
     @product = Product.find(params[:id])
+    @categories = Category.all
     respond_to do |format|
       format.atom
     end

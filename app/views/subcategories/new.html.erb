@@ -1,0 +1,17 @@
+<h1>新建子目录类</h1>
+
+<form action="<%= subcategories_path %>" method="post">
+	<label for="name">Name</label>
+	<input type="text" name="name" id="name">
+	<br />
+	<label for="categories">categories</label>
+	<select name="categories" id="categories">
+		<% @categories.each do |category|%>
+		<option value="<%= category.id%>"><%= category.name%></option>
+		<%end%>
+	</select>
+	<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="Mq3PR03JCPawOaGZVPQEu28i4aD1695byQu2LjUnHWA="></div>
+	<input type="submit">
+</form>
+
+<%= link_to 'Back', categories_path %>

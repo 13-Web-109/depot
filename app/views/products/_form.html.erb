@@ -27,6 +27,29 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
+
+  <div class="actions">
+    <%= f.label :category_name %><br />
+    <select name="categories" id="categories">
+    <% @categories.each do |category|%>
+      <option value="<%= category.id%>"><%= category.name%></option>
+      <% end %>
+  
+    </select>
+  </div>
+
+  <div>
+    <%= f.label :subcategory_name %><br />
+    <select name="subcategories" id="subcategories">
+      <% @subcategories.each do |subcategory|%>
+      <option value="<%= subcategory.id%>"><%= subcategory.name%></option>
+    <% end %> 
+  </select>
+   
+  </div>  
+
+  <br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
