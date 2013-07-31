@@ -19,7 +19,7 @@
 </div>
 <div id="columns">
   <div id="side">
-    <% if @cart %>
+    <% if @cart and params[:controller] != "carts"%>
       <%= hidden_div_if(@cart.line_items.empty?, :id=>"cart") do %>
         <%= render @cart %>
       <% end %>

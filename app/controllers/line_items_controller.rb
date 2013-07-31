@@ -63,10 +63,11 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1.json
   def update
     @line_item = LineItem.find(params[:id])
-
+    @cart = Cart.find(@line_item.cart_id)
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.js { }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

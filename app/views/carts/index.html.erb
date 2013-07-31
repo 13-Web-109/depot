@@ -1,21 +1,35 @@
-<h1>Listing carts</h1>
-
-<table>
+<h1>Cart</h1>
+<table id="cart_details">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Picture</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Operation</th>
+  </tr>
+  <% @cart.line_items.each do |line_item| %>
+    <tr>
+      <td><%= image_tag line_item.product.image_url, style:"height: 100px" %></td>
+      <td><%= line_item.product.title%></td>
+      <td><%= line_item.product.price%></td>
+      <td>
+        <%= form_for line_item, remote: true do |f| %>
+          <%= f.number_field :quantity%>
+        <% end %>
+      </td>
+    <td><%= link_to 'delete', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <%end%>
+  <tr class="total_line">
+    <td colspan="3">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
 
-<% @carts.each do |cart| %>
   <tr>
-    <td><%= link_to 'Show', cart %></td>
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-    <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td colspan="3"></td>
+    <td><%= button_to "Checkout", new_order_path, method: :get%></td>
+    <td><%= button_to "Empty", @cart, method: :delete, confirm: 'Are you sure?' %></td>
   </tr>
-<% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Cart', new_cart_path %>
