@@ -18,7 +18,7 @@
             <%= f.number_field :quantity%>
           <% end %>
         </td>
-      <td><%= link_to 'delete', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('.delete'), line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <%end%>
     <tr class="total_line">
@@ -28,8 +28,8 @@
 
     <tr>
       <td colspan="3"></td>
-      <td><%= button_to "Checkout", new_order_path, method: :get%></td>
-      <td><%= button_to "Empty", @cart, method: :delete, confirm: 'Are you sure?' %></td>
+      <td><%= button_to t('.checkout'), new_order_path, method: :get%></td>
+      <td><%= button_to t('.empty'), @cart, method: :delete, confirm: 'Are you sure?' %></td>
     </tr>
   </table>
 <% else %>

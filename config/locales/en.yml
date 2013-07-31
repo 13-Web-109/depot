@@ -6,6 +6,10 @@ en:
       questions:        "Questions"
       news:             "News"
       contact:          "Contact"
+      orders:           "Orders"
+      products:         "Products"
+      users:            "Users"
+      logout:           "Logout"
 
   store:
     index:
@@ -15,8 +19,12 @@ en:
   carts:
     cart:
       title:            "Your Cart"
-      empty:            "Empty cart"
+      details:          "Details"
       checkout:         "Checkout"
+    index:
+      delete:           "Delete"
+      checkout:         "Checkout"
+      empty:            "Empty"
 
   number:
     currency:
@@ -35,7 +43,7 @@ en:
       address_html:     "Address"
       email:            "E-mail"
       pay_type:         "Pay with"
-      pay_prompt:       "Select a payment method"
+      pay_prompt_html:  "Select a payment method"
       submit:           "Place Order"
 
   thanks:               "Thank you for your order"

@@ -7,8 +7,13 @@ class StoreController < ApplicationController
   		redirect_to store_path(locale: params[:set_locale])
 
   	else
-  	 @products = Product.order(:title)
-  	 @cart = current_cart
-  	end
+      if params[:search]
+        @products = Product.find(:all, :conditions=>["title like ?","%#{params[:search]}%"])
+      else
+  	    @products = Product.order(:title)
+  	  end
+
+      @cart = current_cart
+    end
   end
 end
