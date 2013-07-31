@@ -6,6 +6,10 @@ es:
       questions:       "Preguntas"
       news:            "Noticias"
       contact:         "Contacto"
+      orders:          "Orden"
+      products:        "Producto"
+      users:           "Usuario"
+      logout:          "Dejar de"
 
   store:
     index:
@@ -15,8 +19,12 @@ es:
   carts:
     cart:
       title:           "Carrito de la Compra"
-      empty:           "Vaciar Carrito"
+      details:         "Detalles"
       checkout:        "Comprar"
+    index:
+      delete:          "Dejar de"
+      checkout:        "Asentamiento"
+      empty:           "Vaciar Cesta de la compra"
 
   number:
     currency:
@@ -35,8 +43,10 @@ es:
       address_html:    "Direcci&oacute;n"
       email:           "E-mail"
       pay_type:        "Pagar con"
-      pay_prompt:      "Seleccione un m&eacute;todo de pago"
+      pay_prompt_html: "Seleccione un m&eacute;todo de pago"
       submit:          "Realizar Pedido"
+
+  thanks:              "Gracias por su pedido"
 
   activerecord:
     models:
@@ -59,4 +69,3 @@ es:
         one:           "1 error ha impedido que este %{model} se guarde"
         other:         "%{count} errors han impedido que este %{model} se guarde"
 
-  thanks:              "Gracias por su pedido"
