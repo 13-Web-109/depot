@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :loggedIn
+  skip_before_filter :admin
 
   def index
   	if params[:set_locale]
