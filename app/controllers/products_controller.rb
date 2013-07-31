@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  skip_before_filter :admin, only: [:show]
+  skip_before_filter :loggedIn, only: [:show]
+
   # GET /products
   # GET /products.json
   def index

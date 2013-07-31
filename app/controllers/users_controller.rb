@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
-  skip_before_filter :admin, only: [:new, :create]
+  skip_before_filter :admin
   skip_before_filter :loggedIn, only: [:new, :create]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name)
+    if session[:user_id]  and session[:user_type] == 0
+      @users = User.order(:name)
+    elsif session[:user_id]  and session[:user_type] == 1
+      @user = User.find(session[:user_id])
+    end
+        
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,8 +50,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+    if session[:user_type] and session[:user_type] == 0
+      @user.user_type = 0
+    else 
+      @user.user_type = 1
+    end
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
+        session[:user_type] = @user.user_type
         format.html { redirect_to store_url, notice: "User #{@user.name} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else

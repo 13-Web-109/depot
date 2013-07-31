@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   skip_before_filter :admin
+  # skip_before_filter :loggedIn
 
   # GET /carts
   # GET /carts.json
@@ -21,17 +22,17 @@ class CartsController < ApplicationController
       redirect_to store_url, notice: 'invalid cart'
     else
       respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @cart }
+        format.html # show.html.erb
+        format.json { render json: @cart }
+      end
     end
-  end
   end
 
   # GET /carts/new
   # GET /carts/new.json
   def new
-    @cart = Cart.new
-
+    @cart = Cart.new()
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cart }
@@ -46,7 +47,7 @@ class CartsController < ApplicationController
   # POST /carts
   # POST /carts.json
   def create
-    @cart = Cart.new(params[:cart])
+    @cart = Cart.new(:user_id => session[:user_id])
 
     respond_to do |format|
       if @cart.save

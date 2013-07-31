@@ -1,11 +1,15 @@
 class OrdersController < ApplicationController
-  skip_before_filter :admin, only: [:new, :create]
+  skip_before_filter :admin
+  skip_before_filter :loggedIn, only: [:new, :create]
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.paginate page: params[:page], order:'created_at desc', per_page:10
-
+    if session[:user_id] and session[:user_type] == 0
+      @orders = Order.paginate page: params[:page], order:'created_at desc', per_page:10
+    elsif session[:user_id] and session[:user_type] == 1
+      @orders = Order.where(user_id:session[:user_id]).paginate page: params[:page], order:'created_at desc', per_page:10
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -49,11 +53,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
-
+    @order.user_id = session[:user_id]
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
+        Cart.destroy(current_cart().id)
         OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice: 'Thank you for your order.' }
         format.json { render json: @order, status: :created, location: @order }

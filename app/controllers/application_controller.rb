@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
 
   private
     def current_cart
-      Cart.find(session[:cart_id])
-    rescue
-      cart = Cart.create
-      session[:cart_id] = cart.id
-      cart
+      cart = Cart.find_by_user_id(session[:user_id])
+      unless cart
+        cart = Cart.create(:user_id => session[:user_id])     
+      end
+      cart 
     end
 
   protected
@@ -18,19 +18,16 @@ class ApplicationController < ActionController::Base
   		# unless User.find_by_id(session[:user_id])
   		# 	redirect_to login_url, notice: "Please log in"
   		# end
-      respond_to do |format|
-      unless User.find_by_id(session[:user_id])
-        format.html { redirect_to login_url, notice: "Please log in" }
-        format.js { render "login"}
-      else
-        format.html { render action: "new" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+      unless session[:user_id] 
+        respond_to do |format|
+          format.html { redirect_to login_url, notice: "Please log in" }
+          format.js { render "layouts/redirect.js.html"}
+        end
       end
-    end
   	end
 
     def admin
-      unless User.find_by_id(session[:user_id]) && User.find(session[:user_id]).name == "bluekey"
+      unless session[:user_id] && session[:user_type] == 0
         redirect_to login_url, notice: "Please log in as admin"
       end
     end
