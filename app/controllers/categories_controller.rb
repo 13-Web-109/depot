@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.js { @subcategories = @categories.subcategories }
+      format.js { @subcategories = @category.subcategories }
       format.json { render json: @category }
     end
   end

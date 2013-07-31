@@ -4,4 +4,4 @@
 
 $ ->
   $("select#categories").change -> 
-    $.ajax({url: "" })
+    $.ajax({url: "/categories/"+$(this).val()+".js"})
