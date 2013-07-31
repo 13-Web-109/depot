@@ -1,0 +1,5 @@
+$("#subcategories").html("<%= 
+	@subcategories.each do |subcategory| %>
+		<option value='<%= subcategory.id %>'> <%= subcategory.name%></option>
+	<% end %>
+	")

@@ -1,0 +1,18 @@
+<h1>二级分类目录</h1>
+
+
+
+<% @subcategories.each do |subcategory| %>
+  <tr>
+    <td><%= subcategory.name %></td>
+    
+    <td><%= link_to 'Edit', edit_subcategory_path(subcategory) %></td>
+    <td><%= link_to 'Destroy', subcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <br>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Subcategory', new_subcategory_path %>
