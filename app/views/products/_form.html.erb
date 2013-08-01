@@ -40,9 +40,11 @@
   <div>
     <%= f.label :subcategory_name %><br />
     <select name="subcategories" id="subcategories">
-      <% @categories[0].subcategories.each do |subcategory|%>
-      <option value="<%= subcategory.id%>"><%= subcategory.name%></option>
-      <% end %> 
+      <% unless @categories.empty? %>
+        <% @categories[0].subcategories.each do |subcategory|%>
+        <option value="<%= subcategory.id%>"><%= subcategory.name%></option>
+        <% end %> 
+      <%end%>
     </select>
    
   </div>  
