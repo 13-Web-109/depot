@@ -23,6 +23,65 @@
   <%= @product.price %>
 </p>
 
+
+<div class = "comment">
+  <%= t('.Comment') %>
+</div>
+
+<%= form_for @comment do |f| %>
+  <div class="field">
+    <%= f.label t('.Title')%>：<br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label t('.Review') %>：<br />
+    <%= f.text_area  :review , rows: 3,  cols: 40 %>
+    <%= @comment.title %>
+  </div>
+  <div class="field">
+    <%= f.label t('.Score') %>：<br />
+    <%= f.text_field :score  %>
+  </div>
+
+  <div class="actions">
+    <input type="hidden" name= "comment[product_id]" value=<%= " #{ @product.id}" %>/>
+    <%=submit_tag t('.Submit') %>
+  </div>
+
+
+
+<%end%>
+
+
+<div class = "comment">
+  <%= t('.Comment') %>
+</div>
+
+<% @comments.each do |comment| %>
+<table class="comment_lists">
+<tr>
+  <th>Score:</th>
+  <th><%= comment.score %></th>
+</tr>
+
+<tr>
+  <th>Title:</th>
+  <th><%= comment.title %></th>
+</tr>
+
+<tr>
+  <th>Review:</b>
+  <th><%= comment.review %></th>
+</tr>
+
+<tr>
+  <th>Product:</b>
+  <th><%= comment.product_id %></th>
+</tr>
+</table>
+<br/>
+<% end %>
+
 <p>
   <b>Share:</b>
   <a>
