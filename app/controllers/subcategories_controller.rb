@@ -1,4 +1,6 @@
 class SubcategoriesController < ApplicationController
+  skip_before_filter :admin, only:[:show, :index]
+  skip_before_filter :loggedIn, only: [:show, :index]  # GET /categories
   # GET /subcategories
   # GET /subcategories.json
   def index
@@ -15,7 +17,7 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories/1.json
   def show
     @subcategory = Subcategory.find(params[:id])
-
+    @cart = current_cart
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @subcategory }

@@ -1,39 +1,42 @@
-<h1>Cart</h1>
-<% if @cart and !@cart.line_items.empty?%>
-  <table id="cart_details">
-    <tr>
-      <th>Picture</th>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Operation</th>
-    </tr>
-    <% @cart.line_items.each do |line_item| %>
-      <tr>
-        <td><%= image_tag line_item.product.image_url, style:"height: 100px" %></td>
-        <td><%= line_item.product.title%></td>
-        <td><%= line_item.product.price%></td>
-        <td>
-          <%= form_for line_item, remote: true do |f| %>
-            <%= f.number_field :quantity%>
-          <% end %>
-        </td>
-      <td><%= link_to t('.delete'), line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <%end%>
-    <tr class="total_line">
-      <td colspan="3">Total</td>
-      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-    </tr>
+<div class="cartDetails">
 
-    <tr>
-      <td colspan="3"></td>
-      <td><%= button_to t('.checkout'), new_order_path, method: :get%></td>
-      <td><%= button_to t('.empty'), @cart, method: :delete, confirm: 'Are you sure?' %></td>
-    </tr>
-  </table>
-<% else %>
-  <p>Your cart is empty now.</p>
-<%end%>
+  <h3>Your Cart</h3>
+  <% if @cart and !@cart.line_items.empty?%>
+    <table id="cart_details">
+      <tr>
+        <th>Picture</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Operation</th>
+      </tr>
+      <% @cart.line_items.each do |line_item| %>
+        <tr>
+          <td><%= image_tag line_item.product.image_url, style:"height: 100px" %></td>
+          <td><%= line_item.product.title%></td>
+          <td><%= number_to_currency line_item.product.price%></td>
+          <td>
+            <%= form_for line_item, remote: true do |f| %>
+              <%= f.number_field :quantity%>
+            <% end %>
+          </td>
+        <td><%= link_to t('.delete'), line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <%end%>
+      <tr class="total_line">
+        <td colspan="3">Total</td>
+        <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+      </tr>
+    </table>
+      <ul>
+        <li><%= button_to t('.checkout'), new_order_path, method: :get%></li>
+        <li><%= button_to t('.empty'), @cart, method: :delete, confirm: 'Are you sure?' %></li>
+      </ul> 
+  <% else %>
+    <p>Your cart is empty now.</p>
+  <%end%>
+
+  
+</div>
 
 

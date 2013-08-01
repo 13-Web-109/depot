@@ -25,15 +25,16 @@
           <li><%= link_to t('.orders'), orders_path %></li>
           <li><%= link_to t('.products'), products_path %></li>
           <li><%= link_to t('.users'), users_path %></li>
-          <li><span>Hi, <%= User.find(session[:user_id]).name%>, welcome to booksheft</span> </li>
+          <li><span>Hi, <%= User.find(session[:user_id]).name%>, welcome to bluekey booksheft!</span> </li>
         </ul>
       <%elsif session[:user_id] and session[:user_type] == 1 %>
         <ul class= "user">
+          <li><%= link_to t('.logout'), logout_path, method: :delete %></li>
           <li><%= link_to 'Cart', carts_path %></li>
           <li><%= link_to 'Orders', orders_path %></li>
           <li><%= link_to 'Users', users_path %></li>
+          <li><span>Hi, <%= User.find(session[:user_id]).name%>, welcome to bluekey booksheft!</span> </li>
         </ul>
-        <%= button_to t('.logout'), logout_path, method: :delete %>
       <% else %>
         <div class="noLogin">
           <%= button_to "Login", login_path, class:"button" %>    

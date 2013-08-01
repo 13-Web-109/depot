@@ -27,7 +27,6 @@
     
     #user{
       float: right;
-      width: 500px;
       margin-right: 100px;
       margin-top: -17px;
       
@@ -48,7 +47,19 @@
       }
 
       .user{
-
+        li{
+          float: right;
+          list-style:none;
+          margin-right: 10px;
+          padding: 5px 0;
+          font-size: 13px;
+          a{
+            color: #fff;
+            &:hover{
+              color: #000;
+            }
+          }
+        }
       }
 
       .noLogin{
@@ -153,7 +164,7 @@
   #side {
     float:right;
     width: 196px;
-    margin-top: -4px;
+    margin-top: -18px;
     
     h2{ 
       padding: 0.5em 1em;
@@ -164,8 +175,9 @@
     #cart{
       font-size: smaller;
       color: white; 
+      margin-top: 30px;
       .cart_title{
-
+      
       }
       table {
         margin-bottom: 10px;
@@ -201,7 +213,7 @@
 
     #categroy{
       padding: 10px 0px;
-
+      
       .categroyCon{
         h3{ 
             margin: 2px 0px;
@@ -226,11 +238,10 @@
 
 .depot_form {
   fieldset {
-    background: #efe;
 
     legend {
-      color: #dfd;
-      background: #141;
+      color: #fff;
+      background: #b10000;
       font-family: sans-serif;
 
       padding: 0.2em 1em;
@@ -305,4 +316,5 @@ a.button:hover {
   font-size: 1.2em;
   color: rgb(126, 102, 102);
   border-radius: 2px;
+  margin-top: 10px;
 }

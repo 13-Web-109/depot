@@ -7,7 +7,8 @@
   <table>
     <tr>
       <th>Name</th>
-      <th>User Type</th>
+      <th>User</th>
+      <th>Type</th>
       <th></th>
       <th></th>
     </tr>
@@ -15,6 +16,11 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.name %></td>
+      <% if user.user_type == 0%>
+        <td>admin</td>
+      <% elsif%>
+        <td>user</td>
+      <% end %>
       <td><%= link_to 'Show', user %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
