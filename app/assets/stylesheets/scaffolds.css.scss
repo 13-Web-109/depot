@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -19,13 +20,14 @@ pre {
 }
 
 a {
-  color: #000;
+  color: rgb(60, 60, 60);
+  text-decoration:none;
   &:visited {
-    color: #666;
+    color: rgb(60, 60, 60);
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #b10000;
+    text-decoration: underline;
   }
 }
 
@@ -66,4 +68,24 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.clear{
+  clear: both;
+}
+
+input[type=button], input[type=submit] {
+  width: 90px;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 40, 36);
+  line-height: 28px;
+  height: 28px;
+  overflow: hidden;
+  border-radius:2px;
+  &:hover{
+    opacity: 0.8;
+  }  
 }

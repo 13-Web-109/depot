@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @subcategory.name %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @subcategory.category_id %>
-</p>
-
-<%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |
-<%= link_to 'Back', categories_path %>
+<div class="state">
+  Category: <%= link_to @subcategory.category.name, @subcategory.category %> > <%= link_to @subcategory.name, @subcategory %>
+</div>
+<div class="category">
+  <ul>
+    <% @subcategory.products.each do |product|%>
+    <li class="product">
+      <div class="img">
+        <%= link_to image_tag(product.image_url), product %>
+      </div>
+      <div class="title">
+        <%= link_to product.title, product %>
+      </div>
+      <div class="price">
+        <span class="price"><%= number_to_currency(product.price) %></span>
+      </div>
+    </li>
+    <% end %>
+  </ul>  
+</div>

@@ -49,3 +49,19 @@
     background: #f8b0f8;
   }
 }
+
+.productDetail{
+  width: 700px;
+  .productImg{
+    height: 200px;
+    img{
+      height: 200px;
+    }
+  }
+  .price {
+    span{
+      font-weight: bold;
+      color: red;
+    }
+  }
+}

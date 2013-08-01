@@ -8,12 +8,14 @@ class StoreController < ApplicationController
 
   	else
       if params[:search]
-        @products = Product.find(:all, :conditions=>["title like ?","%#{params[:search]}%"])
+        @products = Product.where("title like ?","%#{params[:search]}%").paginate page: params[:page], order:'title', per_page:10
+        @tatol = Product.where("title like ?","%#{params[:search]}%").count
       else
-  	    @products = Product.order(:title)
+        @products = Product.paginate page: params[:page], order:'title', per_page:10
   	  end
 
       @cart = current_cart
     end
+    @categories = Category.all 
   end
 end

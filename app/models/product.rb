@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   }
   validates :title, :uniqueness => true
 
-  attr_accessible :description, :image_url, :price, :title,:price_confirmation
+  attr_accessible :description, :image_url, :price, :title,:price_confirmation,:subcategory_id
 
   private
   def ensure_not_referenced_by_any_line_item
