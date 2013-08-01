@@ -69,4 +69,13 @@ ActiveRecord::Schema.define(:version => 20130731040615) do
     t.integer  "user_type"
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.integer  "score"           
+    t.text     "review"
+    t.integer  "product_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
 end

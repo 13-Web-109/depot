@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_filter :admin, only: [:show]
-  skip_before_filter :loggedIn, only: [:show]
+  skip_before_filter :loggedIn
+
 
   # GET /products
   # GET /products.json
@@ -21,6 +22,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @categories = Category.all 
     @subcategories = Subcategory.all 
+    
+    @cart = current_cart
+    @comments = Comment.where(product_id: @product.id)
+    @comment = Comment.new
+
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

@@ -42,9 +42,9 @@
       <%= button_to t('.logout'), logout_path, method: :delete %>
     <%elsif session[:user_id] and session[:user_type] == 1 %>
       <ul>
-        <li><%= link_to 'Cart', carts_path %></li>
-        <li><%= link_to 'Orders', orders_path %></li>
-        <li><%= link_to 'Users', users_path %></li>
+        <li><%= link_to t('.cart'), carts_path %></li>
+        <li><%= link_to t('.orders'), orders_path %></li>
+        <li><%= link_to t('.users'), users_path %></li>
       </ul>
       <%= button_to t('.logout'), logout_path, method: :delete %>
     <% else %>
