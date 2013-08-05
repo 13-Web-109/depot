@@ -38,14 +38,14 @@
       <% else %>
         <div class="noLogin">
           <%= button_to "Login", login_path, class:"button" %>    
-          <%= button_to "Sign Up", new_user_path, class:"button", method: "get" %>          
+          <%= button_to "Sign Up", new_user_path, class:"button" %>          
         </div>    
       <% end %>
       </div>
     <div class="clear"></div> 
     
     <div id="logo">
-      <a href="/">Bluekey Bookshelf</a>
+      <a href="/"><%= @page_title || t('.title') %></a>
     </div>
     <form id="search" action="/store" method="get">
       <input type="search" name="search" />
@@ -75,16 +75,34 @@
       <%= button_to t('.logout'), logout_path, method: :delete %>
     <%elsif session[:user_id] and session[:user_type] == 1 %>
       <ul>
-        <li><%= link_to 'Cart', carts_path %></li>
-        <li><%= link_to 'Orders', orders_path %></li>
-        <li><%= link_to 'Users', users_path %></li>
+        <li><%= link_to t('.cart'), carts_path %></li>
+        <li><%= link_to t('.orders'), orders_path %></li>
+        <li><%= link_to t('.users'), users_path %></li>
       </ul>
       <%= button_to t('.logout'), logout_path, method: :delete %>
     <% else %>
       <%= link_to "Login", login_path, class:"button" %>    
       <%= link_to "Sign Up", new_user_path, class:"button" %>    
     <% end %>
+<<<<<<< HEAD
   </div> -->
+=======
+
+    <br/>
+    <br/>
+    <script type="text/javascript">
+    document.write('<iframe width="130" height="220" frameborder="0" scrolling="no" src="http://widget.weibo.com/relationship/bulkfollow.php?language=zh_cn&uids=3671936945&wide=1&color=141,141,8587F4,FFF200&showtitle=1&showinfo=1&sense=0&verified=1&count=1&refer='+encodeURIComponent(location.href)+'&dpc=1"></iframe>')
+    </script>
+    <br/>
+    <br/>
+    <script type="text/javascript">
+    document.write('<iframe width="260" height="200" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=3&isTitle=1&noborder=0&isWeibo=1&isFans=0&uid=3671936945&verifier=5cb21f6a&colors=141,141,fff200,0082cb,000000&dpc=1"></iframe>')
+    </script>
+    <br/>
+    <br/>
+
+  </div>
+>>>>>>> ae632b8466cb6a8762babbd90f84bd5d627340e7
   <div id="main">
     <%= yield %>
   </div>

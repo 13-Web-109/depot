@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_filter :admin, only: [:show]
-  skip_before_filter :loggedIn, only: [:show]
+  skip_before_filter :loggedIn
+
 
   # GET /products
   # GET /products.json
@@ -19,6 +20,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+<<<<<<< HEAD
+=======
     @categories = Category.all 
     @subcategories = Subcategory.all 
     
@@ -28,6 +31,7 @@ class ProductsController < ApplicationController
 
 
 
+>>>>>>> ae632b8466cb6a8762babbd90f84bd5d627340e7
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -50,15 +54,14 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @categories = Category.all
-    @subcategories = Subcategory.all
   end
 
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
     @categories = Category.all
-    @subcategories = Subcategory.all
+    @product = Product.new(params[:product])
+    @product.subcategory_id = params[:subcategories]
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
