@@ -57,6 +57,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @product.subcategory_id = params[:subcategories]
+    @product.image_url = uploadFile(params[:product][:image_url])
     @categories = Category.all
     @subcategories = Subcategory.all
     respond_to do |format|

@@ -1,0 +1,30 @@
+Weekly 3
+
+Activities Planned for Last Week
+
+1. To finish the function of Advanced Shopping Cart. (3 hours on Monday, 7.15)
+2. To finish the function of checkout and pay. (3 hours on Tuesday, 7.16)
+3. To have a RoR Technical Seminar and build task board. (3 hours on Wednesday, 7.17)
+4. To take a SCRUM introductory training and learn deeply in it. (5 hours on Thursday, 7.18)
+5. To have a code review and code refactoring. (7 hours on Friday, 7.19)
+
+Activities Accomplished Last Week
+
+1. We had a lecture of SCRUM, and I deeply learn about agile software development framework for managing software projects.(100%, effective)
+2. I completed the function of partial refresh using Ajax. (100%, effective)
+3. I completed the function of Checkout and Pay and push it to Github.(100%, effective)
+4. I used the other time to complete the other function of project by myself, just for knowing well about the project. (100%, effective)
+5. I deployed the application on my computer by using apache server and mysql database, it's a difficult work since I took long time to finish it.(100%, normal)
+
+Problem
+
+1. When I coded for sending email which is function not in the plan, I got a big problem. I really don't know about smtp protocol. I looked at the configure arguments and don't know what it mean. I thougth I have to search the api of rails. But I really don't know that I must use the email of mine until the TA tell me that. 
+2. Deployed the application on computer of mine was a difficult work, when I follow the wiki, it had lots of error, and I have to search the resolution and solved them one by one, and the second day, the TA told us the wiki was outdate. I just sad. 
+
+Activities Planned for Next Week
+
+1. First, we will continue to profect our project and add some function which we think it should have, for example, the product detail page. (7 hours on Monday, to find new function and complete, diffcult)
+2. Second, we will complete the Product Backlog and Burn-down Chart using Agile and SCRUM methods, which will be applied to team work. (4 hours on Tuesday, follow the template and using agile and scrum method, normal)
+3. Third, we will complete the system design specification (draft), which will be applied to team work. (2 hours on Wednesday, follow our course to design, normal)
+4. Fourth, we will complete of the UML design, and it will be at least finish four diagrams which are class diagrams, sequence diagrams and other necessary map, it will be applied team work, too. (4 hours on Thursday, using the UML knowledge, normal)
+5. Fifth, we will prepare the project for distributing our application, it will be aplied team work.(3 hours on Friday, just similar deployed on my computer, easy)

@@ -3,7 +3,7 @@
     <%= @product.title %>
   </h2>
   <p class="productImg">
-      <%= image_tag(@product.image_url) %>
+      <%= image_tag("/upload/#{@product.image_url}") %>
   </p>
   
   <h3>Description:</h3>

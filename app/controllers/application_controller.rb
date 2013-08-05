@@ -47,4 +47,15 @@ class ApplicationController < ActionController::Base
     def default_url_options
       { locale: I18n.locale }
     end
+
+    def uploadFile(file)     
+      if !file.original_filename.empty?    
+        @filename = file.original_filename
+        @file_url= "public/upload/#{@filename}"       
+        File.open(@file_url, "wb") do |f|    
+          f.write(file.read)   
+        end    
+        return @filename  
+      end   
+    end  
 end

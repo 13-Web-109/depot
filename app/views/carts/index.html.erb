@@ -12,8 +12,8 @@
       </tr>
       <% @cart.line_items.each do |line_item| %>
         <tr>
-          <td><%= image_tag line_item.product.image_url, style:"height: 100px" %></td>
-          <td><%= line_item.product.title%></td>
+          <td><%= link_to image_tag("/upload/#{line_item.product.image_url}", style:"height: 100px"), line_item.product %></td>
+          <td><%= link_to line_item.product.title, line_item.product%></td>
           <td><%= number_to_currency line_item.product.price%></td>
           <td>
             <%= form_for line_item, remote: true do |f| %>
