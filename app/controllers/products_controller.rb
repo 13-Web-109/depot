@@ -56,13 +56,16 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    @image = params[:product][:image_url]
+    params[:product][:image_url] = params[:product][:image_url].original_filename
     @product = Product.new(params[:product])
-    @product.subcategory_id = params[:subcategories]
-    @product.image_url = uploadFile(params[:product][:image_url])
+    # @product.image_url = params[:product][:image_url].original_filename
     @categories = Category.all
     @subcategories = Subcategory.all
+    @product.subcategory_id = params[:subcategories]
     respond_to do |format|
       if @product.save
+        uploadFile(@image)
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
@@ -75,11 +78,15 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
+    @image = params[:product][:image_url]
+    params[:product][:image_url] = params[:product][:image_url].original_filename
+
     @product = Product.find(params[:id])
     @categories = Category.all
     @subcategories = Subcategory.all
     respond_to do |format|
       if @product.update_attributes(params[:product])
+        uploadFile(@image)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
