@@ -1,12 +1,15 @@
-<div class="cart_title"><h2><%= t('.title')%></h2></div>
-<table>
-
-  <%= render(@cart.line_items) %>
-
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-</table>
-<%= button_to t('.checkout'), new_order_path, method: :get%>
-<%= button_to  t('.details'), carts_path, method: :get %>
+<div id="cart-down">
+  <% if @cart and !@cart.line_items.empty? %>
+  <table>
+    <%= render(@cart.line_items) %>
+    <tr class="total_line">
+      <td colspan="2">Total</td>
+      <td class="total_cell"><span class="price"> <%= number_to_currency(@cart.total_price) %></span></td>
+    </tr>
+  </table>
+  <%= link_to :checkout, new_order_path, class: "button" %>
+  <%= link_to  :details, carts_path, class: "button" %>     
+  <% else %>
+    <p>Your cart is empty.</p>
+  <% end %>    
+</div>

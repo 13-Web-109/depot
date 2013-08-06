@@ -15,3 +15,16 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(function(){
+  $("#cart").mouseenter(function(){
+    $("#cart-down").show("fast");
+  }).mouseleave(function(){
+    $("#cart-down").hide("fast");
+  });
+
+  $("#category").mouseenter(function(){
+    $("#category-down").show("fast");
+  }).mouseleave(function(){
+    $("#category-down").hide("fast");
+  });
+});
