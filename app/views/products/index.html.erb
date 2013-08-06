@@ -1,14 +1,14 @@
 <h1>Listing products</h1>
-
-<table>
+<%= link_to 'New Product', new_product_path, class:"button", id: "new" %>
+<table class="well-table">
   <% @products.each do |product| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
       <td>
-        <%= image_tag(product.image_url, class: 'list_image') %>
+        <%= link_to image_tag(product.image_url,class: 'list_image'), product %>
       </td>
       <td class="list_description">
         <dl>
-          <dt><%= product.title %></dt>
+          <dt><%= link_to product.title, product %></dt>
           <dd><%= truncate(strip_tags(product.description),
                 length: 80) %></dd>
         </dl>
@@ -26,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<p><%= will_paginate @products %></p>

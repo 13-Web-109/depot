@@ -7,4 +7,3 @@ $ ->
       $(this).parent().submit()
     else
       $(this).val(1)
-

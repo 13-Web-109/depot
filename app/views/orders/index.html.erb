@@ -1,14 +1,14 @@
 <h1>Listing orders</h1>
 
-<table>
+<table class="well-table">
   <tr>
     <th>Name</th>
     <th>Address</th>
     <th>Email</th>
     <th>Pay type</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Create at</th>
+    <th>Processed</th>
+    <th>Operator</th>
   </tr>
 
 <% @orders.each do |order| %>
@@ -17,8 +17,17 @@
     <td><%= order.address %></td>
     <td><%= order.email %></td>
     <td><%= order.pay_type %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= order.created_at %></td>
+    <% if order.processed == 1 %>
+    <td class="processed" style="color: green">processed</td>
+    <% else %>
+    <td>no</td>
+    <% end %>
+    <td><%= link_to 'Show', order %> 
+      <% if admin? and order.processed == 0%>
+      / <%= link_to 'Process', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>

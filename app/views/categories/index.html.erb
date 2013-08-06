@@ -1,22 +1,19 @@
-<h1>图书商品分类目录</h1>
+<div class="categoryDetails">
+  <h1>图书商品分类目录</h1>
+  <%= link_to '新建一级分类', new_category_path, class:"button" %>
+  <%= link_to '新建二级分类', new_subcategory_path, class:"button" %>
 
-
-
-<% @categories.each do |category| %>
-<h3>[<%= link_to category.name %>]</h3>
- <ul> 
-  <% @subcategories.each do |subcategory| %>
-    <% if subcategory.category_id == category.id%>
-      <li><%= link_to subcategory.name%></li>
+  <% @categories.each do |category| %>
+  <h3>[<%= link_to category.name %>]</h3>
+   <ul> 
+    <% @subcategories.each do |subcategory| %>
+      <% if subcategory.category_id == category.id%>
+        <li><%= link_to subcategory.name%></li>
+    
+      <%end%>
    
-    <%end%>
- 
-    <%end%>
-  </ul>
-<% end %>
-
-
-
-<%= link_to '新建一级分类', new_category_path %>
-<br>
-<%= link_to '新建二级分类', new_subcategory_path %>
+      <%end%>
+    </ul>
+    <div class="clear"></div>
+  <% end %>
+</div>

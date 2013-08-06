@@ -13,27 +13,9 @@
       margin-left: 10px;
     }
   }
-  table{
-    border: 1px solid #b10000;
-    border-top: 0;
-    tr{
-      text-align: center;
-      th{
-        background: #b10000;
-        color: #fff;
-        padding: 5px 10px;
-      }
-      td{
-        min-width: 10em;
-        input[type=number]{
-          width: 4em;
-        }
-      }
-      &:nth-child(odd){
-        background: rgb(245, 245, 245);
-      }
-    
-    }
+
+  input[type="number"]{
+    width: 4em;
   }
 
 }

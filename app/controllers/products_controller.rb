@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
 
   def index
-    @products = Product.all
+    @products = Product.paginate page: params[:page], order:'updated_at', per_page:10
     @categories = Category.all
     @subcategories = Subcategory.all
     respond_to do |format|
@@ -25,8 +25,6 @@ class ProductsController < ApplicationController
     @cart = current_cart
     @comments = Comment.where(product_id: @product.id)
     @comment = Comment.new
-
-
 
     respond_to do |format|
       format.html # show.html.erb

@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
 
   protected
   	def loggedIn
-  		# unless User.find_by_id(session[:user_id])
-  		# 	redirect_to login_url, notice: "Please log in"
-  		# end
       unless session[:user_id] 
         respond_to do |format|
           format.html { redirect_to login_url, notice: "Please log in" }

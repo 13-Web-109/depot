@@ -10,7 +10,6 @@
 <div id="banner">
   <div id="bannerContainner">
 
-
     <%= form_tag store_path, class: 'locale' do %>
       <%= select_tag 'set_locale', options_for_select(LANGUAGES,I18n.locale.to_s),
       onchange: 'this.form.submit()' %>
@@ -36,10 +35,10 @@
           <li><span>Hi, <%= User.find(session[:user_id]).name%>, welcome to bluekey booksheft!</span> </li>
         </ul>
       <% else %>
-        <div class="noLogin">
-          <%= button_to "Login", login_path, class:"button" %>    
-          <%= button_to "Sign Up", new_user_path, class:"button", method: "get" %>          
-        </div>    
+        <ul class="noLogin">
+          <li class="item"><%= link_to "Login", login_path %> </li>   
+          <li class="item"><%= link_to "Sign Up", new_user_path %> </li>         
+        </ul>    
       <% end %>
       </div>
     <div class="clear"></div> 
@@ -51,6 +50,10 @@
       <input type="search" name="search" />
       <input type="submit" value="Search">
     </form>
+
+    <div id="cart">
+      
+    </div>
 
   </div>
 </div>

@@ -2,13 +2,13 @@ body {
   margin: 0;
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: Arial,Verdana, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: Arial,Verdana, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -75,7 +75,7 @@ div {
 }
 
 input[type=button], input[type=submit] {
-  width: 90px;
+  min-width: 50px;
   border: 0;
   font-size: 14px;
   cursor: pointer;
@@ -88,4 +88,53 @@ input[type=button], input[type=submit] {
   &:hover{
     opacity: 0.8;
   }  
+}
+a.button {
+  min-width: 50px;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 40, 36);
+  line-height: 28px;
+  height: 28px;
+  overflow: hidden;
+  border-radius:2px;
+  text-decoration: none;
+  padding: 5px;
+  text-decoration: none;
+  &:hover{
+    opacity: 0.8;
+  }  
+}
+
+.well-table{
+  border-spacing: 0px;
+  tr{
+    text-align: left;
+    td, th{
+      padding: 5px 10px;
+    }
+    &:nth-child(odd){
+      background-color: rgb(246, 246, 246);
+    }
+    &:hover{
+      background-color: rgb(243, 243, 243);
+    }
+  }
+}
+
+.pagination{
+  a, span, em{
+    background: #bbb;
+    padding: 8px 12px;
+  }
+  .current{
+    background:#b10000;
+  }
+}
+
+.price{
+  font-weight: bold;
+  color: #E4393C;
 }

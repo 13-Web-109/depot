@@ -1,25 +1,48 @@
-<p id="notice"><%= notice %></p>
+<h2>Summary</h2>
+<% if !@order.line_items.empty?%>
+<table class="well-table">
+  <tr>
+    <th>Picture</th>
+    <th>Book Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <% @order.line_items.each do |line_item| %>
+  <tr>
+    <td><%= image_tag "/upload/#{line_item.product.image_url}", size: "50x75" %></td>
+    <td><%= line_item.product.title%></td>
+    <td><%= number_to_currency line_item.product.price%></td>
+    <td><%= line_item.quantity%></td>
+  </tr>
+  <% end %>
+  <tr class="total_line">
+    <td colspan="3"></td>
+    <td class="total_cell">Total: <span class="price"> <%= number_to_currency(@order.total_price) %></span></td>
+  </tr>
+</table>
+<% else %>
+<p>None</p>
+<% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @order.name %>
-</p>
+<h2>Information</h2>
+<table class="well-table">
+  <tr>
+    <th>Name</th>
+    <td><%= @order.name %></td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= @order.address %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= @order.email %></td>
+  </tr>
+  <tr>
+    <th>Pay type</th>
+    <td><%= @order.pay_type %></td>
+  </tr>
 
-<p>
-  <b>Address:</b>
-  <%= @order.address %>
-</p>
+</table>
 
-<p>
-  <b>Email:</b>
-  <%= @order.email %>
-</p>
-
-<p>
-  <b>Pay type:</b>
-  <%= @order.pay_type %>
-</p>
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', orders_path, class:"button" %>

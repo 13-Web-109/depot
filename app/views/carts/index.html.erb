@@ -2,7 +2,7 @@
 
   <h3>Your Cart</h3>
   <% if @cart and !@cart.line_items.empty?%>
-    <table id="cart_details">
+    <table id="cart_details" class="well-table">
       <tr>
         <th>Picture</th>
         <th>Title</th>
@@ -24,8 +24,8 @@
         </tr>
       <%end%>
       <tr class="total_line">
-        <td colspan="3">Total</td>
-        <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+        <td colspan="4"></td>
+        <td class="total_cell">Total: <span class="price"> <%= number_to_currency(@cart.total_price) %></span></td>
       </tr>
     </table>
       <ul>

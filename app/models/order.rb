@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   belongs_to :user
-  attr_accessible :address, :email, :name, :pay_type,:user_id
+  attr_accessible :address, :email, :name, :pay_type,:user_id, :processed
   PAYMENT_TYPES = ['Check', 'Credit card', "Purchase order"]
 
   validates :name, :address, :email, presence: true
@@ -12,5 +12,9 @@ class Order < ActiveRecord::Base
       item.cart_id = nil
       line_items << item
     end
+  end
+
+  def total_price
+    line_items.to_a.sum { |item| item.total_price }
   end
 end

@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   skip_before_filter :admin
+  skip_before_filter :loggedIn, only: [:create, :destroy]
 
   # GET /line_items
   # GET /line_items.json

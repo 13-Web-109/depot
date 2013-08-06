@@ -16,7 +16,6 @@
   background: #b10000;
   padding: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
   color: #fff;
   height: 80px;
   text-align: center;
@@ -27,8 +26,8 @@
     
     #user{
       float: right;
-      margin-right: 100px;
-      margin-top: -17px;
+      margin-right: 0px;
+      margin-top: -18px;
 
       ul{
         li{
@@ -36,12 +35,12 @@
           list-style:none;
           margin-right: 10px;
           padding: 5px 0;
-          font-size: 13px;
+          font-size: 15px;
   
           a{
             color: #fff;
             &:hover{
-              color: #000;
+              text-decoration: none;
             }
           }
         }
@@ -52,6 +51,9 @@
           height: 25px;
           border-radius: 3px;
           line-height: 25px;
+          &:hover{
+            opacity: 0.8;
+          }
         } 
 
       }     
@@ -65,23 +67,13 @@
       }
 
       .noLogin{
-        form.button_to{
-          float: right;
-          margin-right: 5px;
-          div{
-            width: 80px;
-            input{
-              width: 80px;
-            }
-          }
-        }
       }
-
     }
     #logo{
       float:left;
       width: 400px;
       margin-top: 15px;
+      font: small-caps 40px/40px "Times New Roman", serif;
       a{
         color: #fff;
         text-decoration: none;      
@@ -108,7 +100,8 @@
         float: left;
         width: 90px;
         border: 0;
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: bold;
         cursor: pointer;
         color: rgb(255, 255, 255);
         background-color: rgb(70, 40, 36);
@@ -124,7 +117,7 @@
     .locale {
       float: right;
       height: 20px;
-      margin-top: -20px;
+      margin-top: -6px;
       margin-right: 20px;
       select{
         height: 25px;
@@ -141,7 +134,11 @@
           background: rgb(255, 255, 255); 
         }
       }
-    }    
+    } 
+
+    #cart {
+      
+    }   
   }
 }
 
@@ -275,17 +272,6 @@
       display: none;
     }
   }
-}
-
-a.button {
-  padding: 5px;
-  background: white;
-  border-radius: 5px;
-  text-decoration: none;
-  color: black;
-}
-a.button:hover {
-  background: rgb(211, 199, 199);
 }
 
 .category{
