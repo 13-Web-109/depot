@@ -50,6 +50,8 @@
       <input type="search" name="search" />
       <input type="submit" value="Search">
     </form>
+<<<<<<< HEAD
+
     <div id="category">
       <%= link_to "Category", "/categories"%>
       <div id="category-down">
@@ -75,10 +77,13 @@
         
       <% end %>
     </div>
+    
+
+=======
+>>>>>>> 4cb4fd93dc57991ff2b973ea403f556867e58274
   </div>
 </div>
 <div id="columns">
-
   <div id="main">
     <%= yield %>
   </div>
