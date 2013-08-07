@@ -66,33 +66,34 @@
 </p>
 
 <h2><%= t('.Comment') %></h2>
+<div id="comments">
+  <% @comments.each do |comment| %>
+  <div class="comment">
+    <table class="comment_lists">
+    <tr>
+      <td>Score:</td>
+      <td>
+        <% comment.score.times do %>
+        *
+        <% end %>
+      </td>
+    </tr>
 
-<% @comments.each do |comment| %>
+    <tr>
+      <td>Title:</td>
+      <td><%= comment.title %></td>
+    </tr>
 
-<table class="comment_lists">
-<tr>
-  <td>Score:</td>
-  <td>
-    <% comment.score.times do %>
-    *
-    <% end %>
-  </td>
-</tr>
-
-<tr>
-  <td>Title:</td>
-  <td><%= comment.title %></td>
-</tr>
-
-<tr>
-  <td>Review:</b>
-  <td><%= comment.review %></td>
-</tr>
-</table>
-<hr/>
-<% end %>
-
-<%= form_for @comment do |f| %>
+    <tr>
+      <td>Review:</b>
+      <td><%= comment.review %></td>
+    </tr>
+    </table>
+    <hr/>
+  </div>
+  <% end %>
+</div>
+<%= form_for @comment, remote: true do |f| %>
   <div class="field">
     <%= f.label t('.Title')%>：<br />
     <%= f.text_field :title %>
@@ -104,7 +105,7 @@
   </div>
   <div class="field">
     <%= f.label t('.Score') %>：<br />
-    <%= f.text_field :score  %>
+    <%= f.select :score,[1,2,3,4,5], {:selected => "3"} %>
   </div>
 
   <div class="actions">

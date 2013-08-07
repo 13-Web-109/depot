@@ -2,6 +2,6 @@
 
 if($('#cart tr').length == 1) { $('#cart').show('blind',1000);}
 
-$('#cart').html('<%= link_to "Cart (#{@cart.total_quantity})", @cart%><%=j render @cart %>');
+$('#cart').html('<%= link_to "Cart (#{@cart.total_quantity})", "/carts"%><%=j render @cart %>');
 
 $('#cart').css({'background-color' : '#462824'}).animate({'background-color':'rgb(236, 202, 202)'}, 400).animate({'background-color':'#462824'}, 400)

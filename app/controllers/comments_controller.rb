@@ -52,6 +52,7 @@ class CommentsController < ApplicationController
                                           id:@comment.product_id),
                                           notice: 'Comment was successfully created.') }
         format.json { render json: @comment, status: :created, location: @comment }
+        format.js {}
       else
         #format.html { render action: "new" }
         format.html { redirect_to(url_for(controller:"products", 

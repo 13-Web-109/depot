@@ -1,0 +1,222 @@
+Run options: 
+
+# Running tests:
+
+EEEE
+
+Finished tests in 0.563534s, 7.0981 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_image_url_must_be_valid(ProductTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:10', '2013-08-07 06:44:10', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:407:in `_run__896468297__setup__263714355__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+  2) Error:
+test_product_attribute_must_not_be_empty(ProductTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:10', '2013-08-07 06:44:10', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:407:in `_run__896468297__setup__263714355__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+  3) Error:
+test_product_price_must_be_positive(ProductTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:10', '2013-08-07 06:44:10', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:407:in `_run__896468297__setup__263714355__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+  4) Error:
+test_title_must_be_unique(ProductTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:10', '2013-08-07 06:44:10', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:407:in `_run__896468297__setup__263714355__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+4 tests, 0 assertions, 0 failures, 4 errors, 0 skips
+Run options: 
+
+# Running tests:
+
+E
+
+Finished tests in 0.161690s, 6.1847 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_should_get_index(AdminControllerTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:15', '2013-08-07 06:44:15', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:429:in `_run__117643390__setup__901263591__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+1 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+Run options: 
+
+# Running tests:
+
+E
+
+Finished tests in 0.175780s, 5.6889 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_buy_a_product(UserStoriesTest):
+ActiveRecord::StatementInvalid: SQLite3::SQLException: table subcategories has no column named subcategory_id: INSERT INTO "subcategories" ("name", "category_id", "subcategory_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2013-08-07 06:44:21', '2013-08-07 06:44:21', 980190962)
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `initialize'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `new'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:91:in `prepare'
+    /var/lib/gems/1.9.1/gems/sqlite3-1.3.7/lib/sqlite3/database.rb:134:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `block in execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/sqlite_adapter.rb:278:in `execute'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:277:in `insert_fixture'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:502:in `block (5 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:501:in `block (4 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:500:in `block (3 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `each'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:492:in `block (2 levels) in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:491:in `block in create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract_adapter.rb:168:in `disable_referential_integrity'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:476:in `create_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:895:in `load_fixtures'
+    /var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:849:in `setup_fixtures'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:418:in `_run__138431207__setup__274195102__callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+    /var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/testing/setup_and_teardown.rb:35:in `run'
+
+1 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+Errors running test:units! #<RuntimeError: Command failed with status (4): [ruby -I"lib:test" -I"/var/lib/gems/1.9.1/gems/rake-10.1.0/lib" "/var/lib/gems/1.9.1/gems/rake-10.1.0/lib/rake/rake_test_loader.rb" "test/unit/**/*_test.rb" ]>
+Errors running test:functionals! #<RuntimeError: Command failed with status (1): [ruby -I"lib:test" -I"/var/lib/gems/1.9.1/gems/rake-10.1.0/lib" "/var/lib/gems/1.9.1/gems/rake-10.1.0/lib/rake/rake_test_loader.rb" "test/functional/**/*_test.rb" ]>
+Errors running test:integration! #<RuntimeError: Command failed with status (1): [ruby -I"lib:test" -I"/var/lib/gems/1.9.1/gems/rake-10.1.0/lib" "/var/lib/gems/1.9.1/gems/rake-10.1.0/lib/rake/rake_test_loader.rb" "test/integration/**/*_test.rb" ]>

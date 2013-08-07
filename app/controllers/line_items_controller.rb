@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
     @line_items = LineItem.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {redirect_to "404.html"}
       format.json { render json: @line_items }
     end
   end
@@ -16,10 +16,8 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.json
   def show
-    @line_item = LineItem.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {redirect_to "404.html"}
       format.json { render json: @line_item }
     end
   end
@@ -82,9 +80,10 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-
+    @cart = current_cart
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to "/carts" }
+      format.js {}
       format.json { head :no_content }
     end
   end

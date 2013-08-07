@@ -8,13 +8,13 @@ class UsersControllerTest < ActionController::TestCase
       password_confirmation:  "private"
     }
 
-    @user = users(:one)
+    @user = users(:user)
+    login_as_admin
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:users)
   end
 
   test "should get new" do
@@ -26,8 +26,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_difference('User.count') do
       post :create, user: @input_attributes
     end
-
-    assert_redirected_to users_path
   end
 
   test "should show user" do

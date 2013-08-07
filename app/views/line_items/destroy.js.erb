@@ -1,0 +1,5 @@
+<% if @cart and !@cart.line_items.empty?%>
+$(".cartDetails #<%= params[:id]%>").remove()
+<% else%>
+$(".cartDetails").html("<p>Your cart is empty now.</p>")
+<% end %>

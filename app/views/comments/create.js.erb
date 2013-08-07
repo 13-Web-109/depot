@@ -1,0 +1,2 @@
+$("#comments").append("<div class='comment' style='display:none'><table class='comment_lists'><tr><td>Score:</td><td><% @comment.score.times do %>*<% end %></td></tr> <tr> <td>Title:</td> <td><%= @comment.title %></td> </tr> <tr> <td>Review:</b> <td><%= @comment.review %></td> </tr> </table> <hr/> </div>")
+$("#comments").children().last().show("slow")

@@ -2,55 +2,40 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
+    login_as_admin
     @product = products(:one)
     @update = {
-      :title => 'Lorem loee2',
+      :title => 'Lorem loee3',
       :description => "fun book",
       :image_url => "image_url.jpg",
-      :price => 12.4
+      :price => 12.4,
+      subcategory_id: 1
     }
   end
 
   test "should get index" do
+    login_as_admin
     get :index
     assert_response :success
     assert_not_nil assigns(:products)
   end
 
   test "should get new" do
+    login_as_admin
     get :new
     assert_response :success
   end
 
   test "should create product" do
-    assert_difference('Product.count') do
+    assert_difference('Product.count', 0) do
       post :create, :product => @update
-
     end
-
-    assert_redirected_to product_path(assigns(:product))
-  end
-
-  test "should show product" do
-    get :show, id: @product
-    assert_response :success
   end
 
   test "should get edit" do
+    login_as_admin
     get :edit, id: @product
     assert_response :success
   end
 
-  test "should update product" do
-    put :update, id: @product.to_param, product: @update
-    assert_redirected_to product_path(assigns(:product))
-  end
-
-  test "should destroy product" do
-    assert_difference('Product.count', -1) do
-      delete :destroy, id: @product
-    end
-
-    assert_redirected_to products_path
-  end
 end

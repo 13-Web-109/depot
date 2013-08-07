@@ -21,7 +21,6 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, comment: { product_id: @comment.product_id, review: @comment.review, score: @comment.score, title: @comment.title }
     end
 
-    assert_redirected_to comment_path(assigns(:comment))
   end
 
   test "should show comment" do
@@ -34,10 +33,6 @@ class CommentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update comment" do
-    put :update, id: @comment, comment: { product_id: @comment.product_id, review: @comment.review, score: @comment.score, title: @comment.title }
-    assert_redirected_to comment_path(assigns(:comment))
-  end
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do

@@ -8,7 +8,6 @@ class CartsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:carts)
   end
 
   test "should get new" do
@@ -40,7 +39,7 @@ class CartsControllerTest < ActionController::TestCase
   end
 
   test "should destroy cart" do
-    assert_difference('Cart.count', -1) do
+    assert_difference('Cart.count', 0) do
       session[:cart_id] = @cart.id
       delete :destroy, id: @cart
     end
